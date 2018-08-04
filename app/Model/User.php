@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -14,8 +14,12 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table = 'users';
+    protected $primaryKey = 'id_user';
+    public $incrementing = true;
+    public $timestamp = true;
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'username', 'password',
     ];
 
     /**
