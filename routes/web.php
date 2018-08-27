@@ -11,4 +11,14 @@
 |
 */
 
-Route::get('/', 'AllController@landing');
+Route::get('/', 'UserController@landing');
+Route::get('/posts/{id}','UserController@viewPost');
+
+Route::prefix('admin')->group(function(){
+  Route::get('/','AdminController@landing');
+  Route::get('/login','AdminController@indexLogin');
+  Route::post('/login','AdminController@login')->name('admin_login');
+  Route::get('/posts/{id}','AdminController@viewPost');
+  Route::post('/posts/{id}','AdminController@post');
+  Route::get('/logout','AdminController@logout')->name('logout');
+});
