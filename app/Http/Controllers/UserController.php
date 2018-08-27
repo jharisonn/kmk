@@ -13,6 +13,7 @@ class UserController extends Controller
     }
 
     public function viewPost($id){
-
+      $posts['posts'] = Posts::where('id_post',$id)->first();
+      return view('user.posts',$posts);
     }
 }

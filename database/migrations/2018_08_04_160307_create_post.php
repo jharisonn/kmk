@@ -17,7 +17,7 @@ class CreatePost extends Migration
           $table->increments('id_post');
           $table->string('title');
           $table->longText('description');
-          $table->timestamp('posted_on');
+          $table->timestamps();
       });
     }
 

@@ -11,14 +11,20 @@
 |
 */
 
-Route::get('/', 'UserController@landing');
-Route::get('/posts/{id}','UserController@viewPost');
+Route::get('/', 'UserController@landing'); //done
+Route::get('/article/view/{id}','UserController@viewPost'); //done
 
 Route::prefix('admin')->group(function(){
-  Route::get('/','AdminController@landing');
-  Route::get('/login','AdminController@indexLogin');
-  Route::post('/login','AdminController@login')->name('admin_login');
-  Route::get('/posts/{id}','AdminController@viewPost');
-  Route::post('/posts/{id}','AdminController@post');
-  Route::get('/logout','AdminController@logout')->name('logout');
+  Route::get('/','AdminController@landing'); //done
+  Route::get('/login','AdminController@indexLogin'); //done
+  Route::post('/login','AdminController@login')->name('admin_login'); //done
+  Route::middleware('adminonly')->group(function(){
+    Route::get('/article/create','AdminController@createPost');//done
+    Route::get('/article/view/{id}','AdminController@viewPost'); //done
+    Route::post('/article/create','AdminController@post')->name('create_post'); //done
+    Route::get('/article/edit/{id}','AdminController@edit'); //done
+    Route::post('/article/edit/{id}','AdminController@editPost'); //done
+    Route::get('/agenda/create','AdminController@createAgenda');
+    Route::get('/logout','AdminController@logout')->name('logout'); //done
+  });
 });
