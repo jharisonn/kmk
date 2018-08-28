@@ -1,5 +1,5 @@
 /* --------------------------
-:: Template Name: Colorlib App - App Landing Page 
+:: Template Name: Colorlib App - App Landing Page
 :: Template Author: Colorlib
 :: Template Author URI: https://colorlib.com/
 :: Description: Colorlib is a One Page based App Landing Template. It's very clean, creative & beautiful. It's super     responsive & ultra light.
@@ -26,14 +26,14 @@
 -------------------------- */
 
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,500,700|Montserrat:400,500,700');
-@import 'css/bootstrap.min.css';
-@import 'css/animate.css';
-@import 'css/magnific-popup.css';
-@import 'css/owl.carousel.min.css';
-@import 'css/slick.css';
-@import 'css/font-awesome.min.css';
-@import 'css/themify-icons.css';
-@import 'css/ionicons.min.css';
+@import 'bootstrap.min.css';
+@import 'animate.css';
+@import 'magnific-popup.css';
+@import 'owl.carousel.min.css';
+@import 'slick.css';
+@import 'font-awesome.min.css';
+@import 'themify-icons.css';
+@import 'ionicons.min.css';
 
 /* --------------------------
 :: 1.0 Base CSS Start
@@ -430,7 +430,7 @@ p {
 -------------------------- */
 
 .wellcome_area {
-    background-image: url(img/welcome.jpg);
+    background-image: url(../img/welcome.jpg);
     height: 900px;
     position: relative;
     z-index: 1;

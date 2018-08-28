@@ -7,7 +7,9 @@ use App\Model\User;
 use App\Model\Posts;
 use App\Model\Event;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Validator;
+use Uuid;
 
 class AdminController extends Controller
 {
@@ -93,12 +95,11 @@ class AdminController extends Controller
     public function createAgenda(Request $request){
       // dd($request->picture);
       $rules = [
-        'picture' => 'mimes:jpeg,png,jpg,bmp,tiff | max:4096 | required',
+        'picture' => 'mimes:jpeg,png,jpg,bmp,tiff | max:4096',
         'title' => 'required',
       ];
       $messages = [
         'title.required' => 'Masukan title',
-        'picture.required' => 'File belum dimasukkan',
         'picture.mimes' => 'File gambar bukan berformat jpeg,png,jpg,bmp,tiff',
         'picture.max' => 'File gambar melebihi batas 4mb',
       ];
@@ -108,9 +109,14 @@ class AdminController extends Controller
       }
       $agenda = new Event();
       $agenda->title = $request->title;
-      $picture = $request->file('picture');
-      $agenda->image = $picture->getClientOriginalName();
-      $picture->move('uploads',$picture->getClientOriginalName());
+      if($request->file('picture') == NULL){
+        $agenda->image = "img/default.png";
+      }
+      else{
+        $picture = $request->file('picture');
+        $agenda->image = Uuid::generate().'.'.$picture->getClientOriginalExtension();
+        $picture->move('uploads',$agenda->image);
+      }
       $agenda->save();
       return redirect('/');
     }
@@ -118,6 +124,10 @@ class AdminController extends Controller
     public function editAgenda($id){
       $event['event'] = Event::where('id_event',$id)->first();
       return view('admin.edit_event',$event);
+    }
+
+    public function postEditAgenda($id, Request $request){
+      $event = Event::where('id_event',$id)->first();
     }
 
     public function logout(){

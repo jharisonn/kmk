@@ -210,6 +210,7 @@
                 <div class="col-12">
                     <!-- App Screenshots Slides  -->
                     <div class="app_screenshots_slides owl-carousel">
+                      {{-- foreach dari sini --}}
                         <div class="single-shot">
                             <img src="{{asset('img/post_1.png')}}" alt="">
                             <p>selamat hari raya</p>
