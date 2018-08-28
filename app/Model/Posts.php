@@ -8,7 +8,7 @@ class Posts extends Model
 {
  protected $table = 'posts';
  protected $primaryKey = 'id_post';
- public $incrementing = true;
+ public $incrementing = false;
  public $timestamps = true;
 
 }

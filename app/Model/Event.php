@@ -8,6 +8,6 @@ class Event extends Model
 {
   protected $table = 'event';
   protected $primaryKey = 'id_article';
-  public $incrementing = true;
+  public $incrementing = false;
   public $timestamps = true;
 }
