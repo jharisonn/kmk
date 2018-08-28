@@ -24,7 +24,10 @@ Route::prefix('admin')->group(function(){
     Route::post('/article/create','AdminController@post')->name('create_post'); //done
     Route::get('/article/edit/{id}','AdminController@edit'); //done
     Route::post('/article/edit/{id}','AdminController@editPost'); //done
-    Route::get('/agenda/create','AdminController@createAgenda');
+    Route::get('/agenda/create','AdminController@Agenda'); //done
+    Route::post('/agenda/create','AdminController@createAgenda')->name('create_agenda'); //done
+    Route::get('/agenda/edit/{id}','AdminController@editAgenda'); //done
+    Route::post('/agenda/edit/{id}','AdminController@postEditAgenda');
     Route::get('/logout','AdminController@logout')->name('logout'); //done
   });
 });
