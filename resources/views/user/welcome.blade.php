@@ -12,13 +12,13 @@
     <title>KMK ITS</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/logo.png">
+    <link rel="icon" href="{{asset('img/logo.png')}}">
 
     <!-- Core Stylesheet -->
-    <link href="style.css" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
     <!-- Responsive CSS -->
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="{{asset('css/responsive.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
 </head>
 
@@ -31,13 +31,13 @@
     <!-- ***** Header Area Start ***** -->
     <header class="header_area animated">
         <div class="container-fluid">
-       
+
                 <!-- Menu Area Start -->
-           
+
                     <div class="menu_area">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <!-- Logo -->
-                            <a class="navbar-brand" href="#"><img src="img/logo.png" style="height: 100px" id="logonav"></a>
+                            <a class="navbar-brand" href="#"><img src="{{asset('img/logo.png')}}" style="height: 100px" id="logonav"></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
@@ -76,7 +76,7 @@
         </div>
         <!-- Welcome thumb -->
         <div class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s">
-            <img src="img/logo.png" alt="">
+            <img src="{{asset('img/logo.png')}}" alt="">
         </div>
     </section>
     <!-- ***** Wellcome Area End ***** -->
@@ -99,7 +99,7 @@
                 <div class="col-12 col-md-3">
                     <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
                         <div class="single-icon">
-                            <img src="img/history.png">
+                            <img src="{{asset('img/history.png')}}">
                         </div>
                         <h4>Sejarah KMK</h4>
                         <p>We build pretty complex tools and this allows us to take designs and turn them into functional quickly and easily</p>
@@ -109,7 +109,7 @@
                 <div class="col-12 col-md-3">
                     <div class="single-special text-center wow fadeInUp" data-wow-delay="0.4s">
                         <div class="single-icon">
-                            <img src="img/filosofi-logo.png">
+                            <img src="{{asset('img/filosofi-logo.png')}}">
                         </div>
                         <h4>Filosofi Logo</h4>
                         <p>We build pretty complex tools and this allows us to take designs and turn them into functional quickly and easily</p>
@@ -119,7 +119,7 @@
                 <div class="col-12 col-md-3">
                     <div class="single-special text-center wow fadeInUp" data-wow-delay="0.6s">
                         <div class="single-icon">
-                            <img src="img/organigram.png">
+                            <img src="{{asset('img/organigram.png')}}">
                         </div>
                         <h4>Organigram</h4>
                         <p>We build pretty complex tools and this allows us to take designs and turn them into functional quickly and easily</p>
@@ -128,7 +128,7 @@
                 <div class="col-12 col-md-3">
                     <div class="single-special text-center wow fadeInUp" data-wow-delay="0.6s">
                         <div class="single-icon">
-                            <img src="img/gallery.png">
+                            <img src="{{asset('img/gallery.png')}}">
                         </div>
                         <h4>Gallry</h4>
                         <p>We build pretty complex tools and this allows us to take designs and turn them into functional quickly and easily</p>
@@ -154,7 +154,7 @@
                 <div class="col-12 col-md-3">
                     <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
                         <div class="single-icon">
-                            <img src="img/coming.png">
+                            <img src="{{asset('img/coming.png')}}">
                         </div>
                         <h4>KR</h4>
                         <p>Kemah Rohani</p>
@@ -164,7 +164,7 @@
                 <div class="col-12 col-md-3">
                     <div class="single-special text-center wow fadeInUp" data-wow-delay="0.4s">
                         <div class="single-icon">
-                            <img src="img/coming.png">
+                            <img src="{{asset('img/coming.png')}}">
                         </div>
                         <h4>Natal</h4>
                         <p>Natal KMK ITS 2018</p>
@@ -174,7 +174,7 @@
                 <div class="col-12 col-md-3">
                     <div class="single-special text-center wow fadeInUp" data-wow-delay="0.6s">
                         <div class="single-icon">
-                            <img src="img/coming.png">
+                            <img src="{{asset('img/coming.png')}}">
                         </div>
                         <h4>Paskah</h4>
                         <p>Paskah KMK ITS 2019</p>
@@ -183,7 +183,7 @@
                 <div class="col-12 col-md-3">
                     <div class="single-special text-center wow fadeInUp" data-wow-delay="0.6s">
                         <div class="single-icon">
-                            <img src="img/coming.png">
+                            <img src="{{asset('img/coming.png')}}">
                         </div>
                         <h4>3C</h4>
                         <p>Catholic Cimmunity Cup</p>
@@ -191,7 +191,7 @@
                 </div>
             </div>
         </div>
-    </section>    
+    </section>
     <!-- ***** App Screenshots Area Start ***** -->
     <div class="app-screenshots-area bg-white section_padding_0_100 clearfix" id="screenshot">
         <div class="container">
@@ -211,23 +211,23 @@
                     <!-- App Screenshots Slides  -->
                     <div class="app_screenshots_slides owl-carousel">
                         <div class="single-shot">
-                            <img src="img/post_1.png" alt="">
+                            <img src="{{asset('img/post_1.png')}}" alt="">
                             <p>selamat hari raya</p>
                         </div>
                         <div class="single-shot">
-                            <img src="img/post_2.png" alt="">
+                            <img src="{{asset('img/post_2.png')}}" alt="">
                         </div>
                         <div class="single-shot">
-                            <img src="img/post_3.png" alt="">
+                            <img src="{{asset('img/post_3.png')}}" alt="">
                         </div>
                         <div class="single-shot">
-                            <img src="img/post_4.jpg" alt="">
+                            <img src="{{asset('img/post_4.jpg')}}" alt="">
                         </div>
                         <div class="single-shot">
-                            <img src="img/post_5.jpg" alt="">
+                            <img src="{{asset('img/post_5.jpg')}}" alt="">
                         </div>
                         <div class="single-shot">
-                            <img src="img/post_6.jpg" alt="">
+                            <img src="{{asset('img/post_6.jpg')}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -254,19 +254,19 @@
     <!-- ***** Footer Area Start ***** -->
 
     <!-- Jquery-2.2.4 JS -->
-    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="{{asset('js/jquery-2.2.4.min.js')}}"></script>
     <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
+    <script src="{{asset('js/popper.min.js')}}"></script>
     <!-- Bootstrap-4 Beta JS -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- All Plugins JS -->
-    <script src="js/plugins.js"></script>
+    <script src="{{asset('js/plugins.js')}}"></script>
     <!-- Slick Slider Js-->
-    <script src="js/slick.min.js"></script>
+    <script src="{{asset('js/slick.min.js')}}"></script>
     <!-- Footer Reveal JS -->
-    <script src="js/footer-reveal.min.js"></script>
+    <script src="{{asset('js/footer-reveal.min.js')}}"></script>
     <!-- Active JS -->
-    <script src="js/active.js"></script>
+    <script src="{{asset('js/active.js')}}"></script>
 </body>
 
 </html>
