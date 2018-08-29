@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Validator;
 use Uuid;
+use File;
 
 class AdminController extends Controller
 {
@@ -90,6 +91,11 @@ class AdminController extends Controller
       return redirect('/admin/article/view/'.$id);
     } //done
 
+    public function deletePost($id){
+      $posts = Posts::where('id_post',$id)->delete();
+      return redirect('/')->with('success','Post berhasil di delete');
+    }
+
     public function Agenda(){
       return view('admin.create_event');
     } //done
@@ -130,7 +136,40 @@ class AdminController extends Controller
     } //done
 
     public function postEditAgenda($id, Request $request){
+      $rules = [
+        'picture' => 'mimes:jpeg,png,jpg,bmp,tiff | max:4096',
+      ];
+      $messages = [
+        'picture.mimes' => 'File gambar bukan berformat jpeg,png,jpg,bmp,tiff',
+        'picture.max' => 'File gambar melebihi batas 4mb',
+      ];
+      $validator = Validator::make($request->all(),$rules,$messages);
+      if($validator->fails()){
+        return redirect('/admin/agenda/edit/'.$id)->withErrors($validator);
+      }
+
       $event = Event::where('id_event',$id)->first();
+      if($request->file('picture')!= NULL){
+        File::delete(base_path().'/public/uploads/'.$event->image);
+        $picture = $request->file('picture');
+        $imgname = Uuid::generate().'.'.$picture->getClientOriginalExtension();
+        $picture->move('uploads',$imgname);
+        $event = Event::where('id_event',$id)->update([
+          'title' => $request->title,
+          'image' => $imgname,
+        ]);
+      }
+      else{
+        $event = Event::where('id_event',$id)->update([
+          'title' => $request->title,
+        ]);
+      }
+      return redirect('/admin/agenda/edit/'.$id);
+    }
+
+    public function deleteAgenda($id){
+      $event = Event::where('id_event',$id)->delete();
+      return redirect('/')->with('success','Agenda berhasil di delete');
     }
 
     public function logout(){
