@@ -24,10 +24,10 @@ Route::prefix('admin')->group(function(){
     Route::post('/article/create','AdminController@post')->name('create_post'); //done
     Route::get('/article/edit/{id}','AdminController@edit'); //done
     Route::post('/article/edit/{id}','AdminController@editPost'); //done
-    Route::post('/article/delete/{id}','AdminController@deletePost')->name('delete_post'); //untested
+    Route::get('/article/delete/{id}','AdminController@deletePost')->name('delete_post'); //untested
     Route::get('/agenda/create','AdminController@Agenda'); //done
     Route::post('/agenda/create','AdminController@createAgenda')->name('create_agenda'); //done
-    Route::post('/agenda/delete/{id}','AdminController@deleteAgenda')->name('delete_agenda'); //untested
+    Route::get('/agenda/delete/{id}','AdminController@deleteAgenda')->name('delete_agenda'); //untested
     Route::get('/agenda/edit/{id}','AdminController@editAgenda'); //done
     Route::post('/agenda/edit/{id}','AdminController@postEditAgenda'); //done
     Route::get('/logout','AdminController@logout')->name('logout'); //done

@@ -211,7 +211,13 @@
                     <!-- App Screenshots Slides  -->
                     <div class="app_screenshots_slides owl-carousel">
                       {{-- foreach dari sini --}}
+                      @foreach ($events as $event)
                         <div class="single-shot">
+                            <img src="{{asset('uploads/'.$event->image)}}" alt="">
+                            <p>{{$event->title}}</p>
+                        </div>
+                      @endforeach
+                        {{-- <div class="single-shot">
                             <img src="{{asset('img/post_1.png')}}" alt="">
                             <p>selamat hari raya</p>
                         </div>
@@ -229,7 +235,7 @@
                         </div>
                         <div class="single-shot">
                             <img src="{{asset('img/post_6.jpg')}}" alt="">
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
