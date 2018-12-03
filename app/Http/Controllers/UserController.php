@@ -19,4 +19,12 @@ class UserController extends Controller
       $posts['posts'] = Posts::where('id_post',$id)->first();
       return view('user.posts',$posts);
     }
+    
+    public function about(){
+        return view('user.about');
+    }
+    
+    public function gallery(){
+        return view('user.gallery');
+    }
 }

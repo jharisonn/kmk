@@ -13,7 +13,8 @@
 
 Route::get('/', 'UserController@landing'); //done
 Route::get('/article/view/{id}','UserController@viewPost'); //done
-
+Route::get('about','UserController@about'); //about
+Route::get('gallery','UserController@gallery'); //gallery
 Route::prefix('admin')->group(function(){
   Route::get('/','AdminController@landing'); //done
   Route::get('/login','AdminController@indexLogin'); //done
