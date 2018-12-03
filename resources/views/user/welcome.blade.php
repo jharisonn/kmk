@@ -211,7 +211,7 @@
     <div class="container">
       <div class="row justify-content-center mb-5 pb-5">
         <div class="col-md-7 text-center"  data-aos="fade-up">
-          <h2>Our Blog</h2>
+          <h2>News</h2>
         </div>
       </div>
       <div class="row" data-aos="fade-up">
@@ -219,8 +219,7 @@
           @foreach ($events as $key => $event)
             <div class="item">
               <div class="blog-entry" data-aos="fade-up">
-                <a href="blog-single.html" class="block-20" style="background-image: url('{{asset('/uploads/'.$event->image)}}');">
-                </a>
+                <img class="block-20 myImages" id="gambar" src="{{asset('/uploads/'.$event->image)}}">
                 <div class="text">
                   <h3 class="heading">{{$event->title}}</h3>
                   <div class="meta">
@@ -231,8 +230,14 @@
               </div>
             </div>
           @endforeach
+             
         </div>
       </div>
+        <div id="myModal" class="modal">
+                   <span class="close">&times;</span>
+                   <img class="modal-content" id="img01">
+                   <div id="caption"></div>
+                 </div>
     </div>
   </div>
 
@@ -268,6 +273,32 @@
   <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
   <script src="{{asset('js/aos.js')}}"></script>
   <script src="{{asset('js/main.js')}}"></script>
+      
+  <script>
+// Get the modal
+var modal = document.getElementById('myModal');
 
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('gambar');
+var modalImg = document.getElementById("img01");
+var images = document.getElementsByClassName('myImages');
+var captionText = document.getElementById("caption");
+for (var i = 0; i < images.length; i++) {
+  var img = images[i];
+  // and attach our click listener for this image.
+  img.onclick = function(evt) {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+}
+
+var span = document.getElementsByClassName("modal")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+    </script>
   </body>
 </html>
