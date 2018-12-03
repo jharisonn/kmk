@@ -4,12 +4,12 @@
     <title>KMK ITS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/open-iconic-bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
-    
+
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
   </head>
   <body>
-    
+
    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" data-aos="fade-down" data-aos-delay="500">
       <div class="container">
         <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('img/logo.png')}}" style="height: 15%; width: 15%"></a>
@@ -64,7 +64,7 @@
     </section>
     <!-- END section -->
 
-    
+
 
     <section class="ftco-section-2">
       <div class="container-fluid">
@@ -74,7 +74,7 @@
           </div>
           <div class="text col-md-6">
             <div class="text-inner align-self-start" data-aos="fade-up">
-              
+
               <h3>Latar Belakang terbentuknya KMK ITS</h3>
               <p>Keluarga Mahasiswa Katolik (KMK) sebagai bentuk UKM TPKK ITS berdiri pertama kali pada tahun 1995. KMK ini didirikan oleh sekumpulan mahasiswa Katolik ITS yang membutuhkan adanya wadah untuk terus menggali dan memperdalam sisi kerohanian mereka, serta menyalurkan sisi kerohanian mereka ke dalam bentuk pelayanan rohani yaitu di dalam KMK ini. </p>
 
@@ -101,7 +101,7 @@
                 <h3 class="heading">Kemah Rohani</h3>
                 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" id="myBtn">
             <div class="media block-6 d-block text-center kotak">
@@ -110,7 +110,7 @@
                 <h3 class="heading">Paskah KMK ITS</h3>
                 <p>Coming Soon</p>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="media block-6 d-block text-center kotak">
@@ -119,12 +119,12 @@
                 <h3 class="heading">Catholic Community Cup</h3>
                 <p>Coming Soon</p>
               </div>
-            </div>    
+            </div>
             </div>
         </div>
       </div>
     </div>
-    
+
 
   <div class="ftco-section testimony-img" id="ftco-testimony" style="background-image: url(img/internalisasi.JPG);" data-aos="fade"  data-stellar-background-ratio="0.5">
     <div class="container">
@@ -204,7 +204,7 @@
       </div>
     </div>
   </div>
-  
+
 
 
   <div class="ftco-section bg-light">
@@ -216,67 +216,26 @@
       </div>
       <div class="row" data-aos="fade-up">
         <div class="carousel owl-carousel ftco-owl">
-          <div class="item">
-            <div class="blog-entry" data-aos="fade-up">
-              <a href="blog-single.html" class="block-20" style="background-image: url('img/image_5.jpg');">
-              </a>
-              <div class="text">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="icon-calendar"></span> June 29, 2018</a></div>
-                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+          @foreach ($events as $key => $event)
+            <div class="item">
+              <div class="blog-entry" data-aos="fade-up">
+                <a href="blog-single.html" class="block-20" style="background-image: url('{{asset('/uploads/'.$event->image)}}');">
+                </a>
+                <div class="text">
+                  <h3 class="heading">{{$event->title}}</h3>
+                  <div class="meta">
+                    <div><span class="icon-calendar"></span> {{$event->updated_at}}</div>
+                    <div><span class="icon-person"></span> Admin</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="item">
-            <div class="blog-entry" data-aos="fade-up" data-aos-delay="100">
-              <a href="blog-single.html" class="block-20" style="background-image: url('img/image_6.jpg');">
-              </a>
-              <div class="text">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="icon-calendar"></span> June 29, 2018</a></div>
-                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="blog-entry" data-aos="fade-up" data-aos-delay="200">
-              <a href="blog-single.html" class="block-20" style="background-image: url('img/image_7.jpg');">
-              </a>
-              <div class="text">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="icon-calendar"></span> June 29, 2018</a></div>
-                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="blog-entry" data-aos="fade-up" data-aos-delay="200">
-              <a href="blog-single.html" class="block-20" style="background-image: url('img/image_8.jpg');">
-              </a>
-              <div class="text">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="icon-calendar"></span> June 29, 2018</a></div>
-                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>
   </div>
-      
+
 <footer class="footer-social-icon text-center section_padding_70 clearfix">
         <!-- footer logo -->
         <div class="footer-text">
@@ -309,6 +268,6 @@
   <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
   <script src="{{asset('js/aos.js')}}"></script>
   <script src="{{asset('js/main.js')}}"></script>
-    
+
   </body>
 </html>
